@@ -1,0 +1,155 @@
+/* Global styles for the entire website */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg');
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: fill;
+  }
+  li{
+    background-color: whitesmoke;
+    padding: 10px;
+  }
+  header {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    color: #666;
+  }
+  
+  .main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  footer {
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Additional styles for images and background */
+  .hero {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 150px 0;
+  }
+  
+  .feature img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  /* Text styling */
+  .heading1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .heading2 {
+    font-size: 45px;
+    margin-bottom: 30px;
+    color: black;
+  }
+  
+  .text-big {
+    font-size: 30px;
+    text-align: center;
+    font-style: italic;
+    }
+  .imageshome{
+    width: 600px;
+    height: 400px;
+  }
+  /* Scroll links styling */
+  .scroll-link {
+    color: #ff8c00;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .scroll-link:hover {
+    color: #e66900;
+  }
+  form {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+/* Assuming the image hyperlink has a class named "logo-link" */
+.whatsapp {
+  display: inline-block; /* Display as inline block to be next to other elements */
+  margin-right: 100px;    /* Add some space between the image and other content */
+}
+
+/* Reduce the size of the image */
+.whatsapp img {
+  max-width: 50px; /* Adjust the value as needed */
+  height: auto;     /* Maintain the aspect ratio */
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

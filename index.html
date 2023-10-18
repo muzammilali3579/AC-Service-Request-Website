@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>AC Service</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to AC Service</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Signup</a></li>
+        <li><a href="loginjs.html">Login Javascript</a></li>
+        <li><a href="signupjs.html">Signup Javascript</a></li>
+        <a class="whatsapp" href="https://web.whatsapp.com/">
+          <img src="whatsapp_318-162854.avif" alt="Click To Visit The Whatsapp">
+        </a>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+    <img src="home.webp" alt="homepage">
+      <h2 class="heading1">Your Comfort is Our Priority</h2>
+      <p class="heading1">Stay cool and comfortable with our professional AC services.</p>
+      <p class="heading1">Explore our range of services to discover how we can enhance your indoor comfort.</p>
+      <p class="heading1">Contact us today to experience the difference in AC service excellence.</p>
+    </div>
+  </section>
+
+  <section id="services" class="main-content">
+    <h2 class="heading2">Our Services</h2>
+    <section id="ac-repair">
+      <h3 class="heading2">AC Repair</h3>
+      <p class="text-big">Is your AC acting up? Our team of experienced technicians is well-equipped to tackle a wide spectrum of AC issues. Whether it's a minor glitch or a major malfunction, you can trust us to swiftly diagnose and restore your cooling system to its optimal performance. Our expert hands ensure that your comfort is back on track, and your space stays refreshingly cool.</p>
+    <img class="imageshome" src="repair.jpg" alt="services">
+    </section>
+
+    <section id="maintenance">
+      <h3 class="heading2">Maintenance</h3>
+      <p class="text-big">Unlock the secret to prolonged AC efficiency with our meticulous maintenance plans. Regular upkeep is essential to ensure that your AC functions at its best throughout the year. Our specially designed maintenance packages are tailored to extend the lifespan of your unit, amplify energy efficiency, and minimize the likelihood of unexpected breakdowns. With our proactive approach, you can enjoy uninterrupted comfort while reducing energy consumption.
+      </p>
+      <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+      <img class="imageshome" src="maintenance.jpg" alt="services">
+    </section>
+    <section id="installation">
+      <h3 class="heading2">Installation</h3>
+      <p class="text-big">Embarking on the journey of a new AC unit? Our team of skilled professionals is at your service. We understand that selecting the right AC unit can be overwhelming, which is why we're here to guide you through the process. Our hassle-free installation services encompass not only a seamless setup but also personalized advice based on your space and cooling needs. Rest assured, our installation expertise guarantees years of reliable and efficient cooling for your comfort.
+
+      </p>
+      <img class="imageshome" src="installation.jpg" alt="services">
+    </section>
+  </section>
+
+  <section id="contact" class="main-content">
+    <h2 class="heading1">Contact Information</h2>
+    <p class="text-big">Feel free to reach out to us:</p>
+    <form action="#" method="post">
+        <h2 style="text-align: center;">Enter The Details</h2>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="problem">AC Problem:</label>
+            <select name="AC Problem:">
+                <option value="" disabled selected hidden>Choose a AC Problem</option>
+                <option value="Maintenance">AC Maintenance</option>
+                <option value="Repair">AC Repair</option>
+                <option value="Installation">AC Installation</option>
+                <option value="Cleaning">AC Cleaning</option>
+                <option value="Inspection">AC Inspection</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit">
+            </div>
+  </section>
+  <footer>
+    <p>&copy; 2023 AC Service. All rights reserved.</p>
+  </footer>
+</body>
+</html>

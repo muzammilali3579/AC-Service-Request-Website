@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login and Signup Page</title>
+  <style>
+    body{
+        font-family: Arial, sans-serif;
+        padding-left: 30%;
+        padding-top: 10%;
+        background-image: url("125367.jpg");
+        background-position: center;
+        background-repeat: repeat-y;
+        background-size: cover;
+
+    }
+    input{
+        width: 100%;
+        padding: 10px 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid lightslategray;
+        background-color: transparent;
+        
+    }
+    .container {   
+            max-width: 400px;
+            background-color: transparent;  
+    }
+    .card{
+            background: transparent;
+    }
+    .card-header{
+        text-align: center;
+    }   
+    #loginEmail,#loginPassword{
+            background: transparent;
+    }
+    button {
+        transition-duration: 0.4s;
+        border: 2px solid lightslategray;
+        border-radius: 10px;
+        color: darkblue;
+        font-size: 16px;
+        padding: 12px 28px;
+        margin: 4px 2px;
+        background-color: transparent;
+    }
+
+    button:hover {
+        background-color: lightseagreen;
+        color: white;
+    }
+    a{
+        color: darkblue;
+    }
+    span{
+        position: right;
+        color: red;
+        bottom: 12px;
+        right: 17px;
+        font-size: 14px;
+    }
+    h4{
+        color:whitesmoke;
+    }
+      </style>
+</head>
+</head>
+<body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1>Signup</h1>
+                        </div>
+                        <div class="card-body">
+                            <form id="signupform" action="index.html">
+                                <div class="form-group">
+                                    <label for="signupName">User Name</label>
+                                    <input type="text" class="form-control" id="signupName" placeholder="Enter name">
+                                    <span id="username-error"> </span>
+                                </div>
+                                <div class="mobile">
+                                    <label for="mobileno">Mobile No</label>
+                                    <input type="number" class="form-control" id="mobileno" placeholder="Enter mobile number">
+                                    <span id="no-error"> </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="signupEmail">Email address</label>
+                                    <input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
+                                    <span id="email-error"> </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="signupPassword">Password</label>
+                                    <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+                                    <span id="password-error"> </span>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Signup</button>
+                                <button type="button" class="btn btn-primary"><a href="jslogin.html">Login</a></button>
+                        
+                            </form>
+                
+                        </div>
+                    </div>
+                
+                <div class="col-md-6">
+            </div>
+        </div> 
+        <script>
+            const form = document.getElementById("signupform");
+            const emailInput = document.getElementById("signupEmail");
+            const passwordInput = document.getElementById("signupPassword");
+            const emailError = document.getElementById("email-error");
+            const passwordError = document.getElementById("password-error");
+            const usernameInput = document.getElementById("signupName");
+            const errorMessage = document.getElementById("username-error");
+            const mobileInput =document.getElementById("mobileno")
+            const mobileError = document.getElementById("no-error");
+
+
+            function validateUsername(){
+                const username = usernameInput.value;
+                const minUsernameLength = 5;
+                const maxUsernameLength = 15;
+                const validCharacters = /^[A-Za-z0-9_]+$/;
+
+                if (username.length < minUsernameLength || username.length > maxUsernameLength) {
+                    errorMessage.textContent = `Username must be between ${minUsernameLength} and ${maxUsernameLength} characters long.`;
+                    return;
+                }
+
+                if (!username.match(validCharacters)) {
+                    errorMessage.textContent = "Username can only contain letters, numbers, and underscores.";
+                    return;
+                }
+                
+                errorMessage.textContent = "";
+            }
+            // Email validation function
+            function validateEmail() {
+              const emailValue = emailInput.value;
+              const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            
+              if (emailRegex.test(emailValue)) {
+                emailError.textContent = "";
+                return true;
+              } else {
+                  emailError.textContent = "Invalid email format";
+                  return false;
+              }
+            }
+            
+            function validateMobileno(){
+                const mobile = mobileInput.value;
+                const mobileRegex = /^[0-9]{10}$/;
+                
+                if (mobileRegex.test(mobile)) {
+                    mobileError.textContent = "";
+                    return true;
+                }else{
+                    mobileError.textContent = " invalid mobile no format";
+                    return false;
+                }
+            }
+          
+            // Password validation function
+            function validatePassword() {
+              const passwordValue = passwordInput.value;
+            
+              if (passwordValue.length >= 8) {
+                passwordError.textContent = "";
+                return true;
+              } else {
+                  passwordError.textContent = "Password must be at least 8 characters long";
+                  return false;
+                  
+              }
+            }
+            // Form submission event listener
+            form.addEventListener("submit", function(event) {
+              if(!validateUsername){
+                event.preventDefault();
+              }
+              if (!validateEmail()){
+                event.preventDefault(); // Prevent form submission
+              } 
+              if(!validateMobileno()){
+                event.preventDefault();
+              }
+            
+              if (!validatePassword()) {
+                event.preventDefault(); // Prevent form submission
+              }
+              if (emailInput.value.trim() === '' || passwordInput.value.trim() === '' || usernameInput.value.trim()==='' || mobileInput.value.trim()==="") {
+                alert("Username, mobile no, Email and password cannot be empty.");
+                event.preventDefault(); // Prevent the form from submitting
+              }
+              });
+          
+              // Input event listeners for real-time validation
+              emailInput.addEventListener("input", validateEmail);
+              passwordInput.addEventListener("input", validatePassword);
+              usernameInput.addEventListener("input", validateUsername);
+              mobileInput.addEventListener("input",validateMobileno)
+          </script>
+    </body>         
+    </body>
+</html>
